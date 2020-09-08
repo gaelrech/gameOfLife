@@ -1,18 +1,8 @@
 package main;
 
-import com.sun.jdi.ByteValue;
-
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
-import java.util.stream.IntStream;
-import java.util.stream.Stream;
-
-import static java.util.stream.IntStream.range;
 
 public class CellCollection {
     private LinkedList<Cell> cellDiagram;
@@ -53,9 +43,7 @@ public class CellCollection {
 
     @Override
     public boolean equals(Object o) {
-        if (!(o instanceof CellCollection)) {
-            return false;
-        }
+        if (!(o instanceof CellCollection)) return false;
 
         CellCollection target = (CellCollection) o;
         AtomicInteger counter = new AtomicInteger(0);

@@ -1,9 +1,5 @@
 package main;
 
-import java.lang.ref.Cleaner;
-import java.util.LinkedHashMap;
-import java.util.LinkedList;
-
 import static java.lang.Math.abs;
 
 public class Cell {
