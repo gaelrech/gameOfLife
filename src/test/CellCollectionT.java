@@ -9,13 +9,13 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class CellCollectionT {
     @Test
     public void stillLife__block(){
-        byte [][] diagram = new byte[][]{
+        int [][] diagram = new int[][]{
                 { 0, 0, 0, 0 },
                 { 0, 1, 1, 0 },
                 { 0, 1, 1, 0 },
                 { 0, 0, 0, 0 }
         };
-        byte [][] expectedDiagram = new byte[][]{
+        int [][] expectedDiagram = new int[][]{
                 { 0, 0, 0, 0 },
                 { 0, 1, 1, 0 },
                 { 0, 1, 1, 0 },
@@ -30,14 +30,14 @@ public class CellCollectionT {
     }
     @Test
     public void stillLife__beeHive(){
-        byte [][] diagram = new byte[][]{
+        int [][] diagram = new int[][]{
                 { 0, 0, 0, 0, 0, 0 },
                 { 0, 0, 1, 1, 0, 0 },
                 { 0, 1, 0, 0, 1, 0 },
                 { 0, 0, 1, 1, 0, 0 },
                 { 0, 0, 0, 0, 0, 0 }
         };
-        byte [][] expectedDiagram = new byte[][]{
+        int [][] expectedDiagram = new int[][]{
                 { 0, 0, 0, 0, 0, 0 },
                 { 0, 0, 1, 1, 0, 0 },
                 { 0, 1, 0, 0, 1, 0 },
@@ -53,14 +53,14 @@ public class CellCollectionT {
     }
     @Test
     public void oscillators__blinker__1(){
-        byte [][] diagram = new byte[][]{
+        int [][] diagram = new int[][]{
                 { 0, 0, 0, 0, 0 },
                 { 0, 0, 0, 0, 0 },
                 { 0, 1, 1, 1, 0 },
                 { 0, 0, 0, 0, 0 },
                 { 0, 0, 0, 0, 0 }
         };
-        byte [][] expectedDiagram = new byte[][]{
+        int [][] expectedDiagram = new int[][]{
                 { 0, 0, 0, 0, 0 },
                 { 0, 0, 1, 0, 0 },
                 { 0, 0, 1, 0, 0 },
@@ -76,14 +76,14 @@ public class CellCollectionT {
     }
     @Test
     public void oscillators__blinker__2(){
-        byte [][] diagram = new byte[][]{
+        int [][] diagram = new int[][]{
                 { 0, 0, 0, 0, 0 },
                 { 0, 0, 1, 0, 0 },
                 { 0, 0, 1, 0, 0 },
                 { 0, 0, 1, 0, 0 },
                 { 0, 0, 0, 0, 0 }
         };
-        byte [][] expectedDiagram = new byte[][]{
+        int [][] expectedDiagram = new int[][]{
                 { 0, 0, 0, 0, 0 },
                 { 0, 0, 0, 0, 0 },
                 { 0, 1, 1, 1, 0 },
@@ -99,7 +99,7 @@ public class CellCollectionT {
     }
     @Test
     public void oscillators__toad__1(){
-        byte [][] diagram = new byte[][]{
+        int [][] diagram = new int[][]{
                 { 0, 0, 0, 0, 0, 0},
                 { 0, 0, 0, 0, 0, 0},
                 { 0, 0, 1, 1, 1, 0},
@@ -107,7 +107,7 @@ public class CellCollectionT {
                 { 0, 0, 0, 0, 0, 0},
                 { 0, 0, 0, 0, 0, 0}
         };
-        byte [][] expectedDiagram = new byte[][]{
+        int [][] expectedDiagram = new int[][]{
                 { 0, 0, 0, 0, 0, 0},
                 { 0, 0, 0, 1, 0, 0},
                 { 0, 1, 0, 0, 1, 0},
@@ -124,7 +124,7 @@ public class CellCollectionT {
     }
     @Test
     public void oscillators__pulsar__1(){
-        byte [][] diagram = new byte[][]{
+        int [][] diagram = new int[][]{
                 {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
                 {0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0},
                 {0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0},
@@ -143,7 +143,7 @@ public class CellCollectionT {
                 {0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0},
                 {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}
         };
-        byte [][] expectedDiagram = new byte[][]{
+        int [][] expectedDiagram = new int[][]{
                 {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
                 {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
                 {0,0,0,0,1,1,0,0,0,0,0,1,1,0,0,0,0},

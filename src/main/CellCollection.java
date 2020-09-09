@@ -3,30 +3,33 @@ package main;
 import java.util.LinkedList;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class CellCollection {
     private LinkedList<Cell> cellDiagram;
-    private CellLifeRules cellLifeRules;
+    private final CellLifeRules cellLifeRules;
 
-    public CellCollection(byte[][] diagram, CellLifeRules cellLifeRules) {
+    public CellCollection(int[][] diagram, CellLifeRules cellLifeRules) {
         this.cellDiagram = createCellDiagram(diagram);
         this.cellLifeRules = cellLifeRules;
     }
 
-    private LinkedList<Cell> createCellDiagram(byte[][] diagram) {
-        var cellDiagram = new LinkedList<Cell>();
-        for (int i = 0; i < diagram.length; i++) {
-            for (int j = 0; j < diagram[i].length; j++) {
-                cellDiagram.add(new Cell(i, j, diagram[i][j] == 0 ? CellState.Dead : CellState.Alive));
-            }
-        }
-        return cellDiagram;
+    private LinkedList<Cell> createCellDiagram(int[][] diagram) {
+        return IntStream
+                .range(0, diagram.length)
+                .boxed()
+                .flatMap(row -> IntStream
+                    .range(0, diagram[row].length)
+                    .mapToObj(col -> new int[] {row, col})
+                )
+                .map(cord -> new Cell(cord[0],cord[1],diagram[cord[0]][cord[1]] == 0 ? CellState.Dead : CellState.Alive))
+                .collect(Collectors.toCollection(LinkedList::new));
     }
 
     public long getNumberOfNeighbours(Cell cell){
         return cellDiagram
                 .stream()
-                .filter(c -> cell.isNeighbour(c) == true)
+                .filter(cell::isNeighbour)
                 .count();
     }
 
